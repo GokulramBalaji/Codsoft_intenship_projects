@@ -1,33 +1,35 @@
-task()
+asks = []
+
 def add_task(task):
-    task.append(task)
-    print("Task'{task}' added tok the list")
+    tasks.append(task)
+    print(f"Task '{task}' added to the list.")
 
 def list_tasks():
     if not tasks:
-        print("There is no task in the list")
+        print("There are no tasks in the list.")
         return
-    for index,task in enumerate(tasks):
-        print("{index+1}.{task}")
-    def main():
-        print("To do list application")
-        print("1.Add task")
-        print("2.List Tasks")
-        print("3.Exit")
-        choice=input("Enter your choice(1-3):")
+    print("Your to-do list:")
+    for index, task in enumerate(tasks, start=1):
+        print(f"{index}. {task}")
 
-        if choice=="1":
-            task=input("Enter the new task")
+def main():
+    print("To-Do List Application")
+    while True:
+        print("\nMenu:")
+        print("1. Add Task")
+        print("2. List Tasks")
+        print("3. Exit")
+
+        choice = input("Enter your choice (1-3): ")
+
+        if choice == '1':
+            task = input("Enter the new task: ")
             add_task(task)
-        elif choice=="2":
+        elif choice == '2':
             list_tasks()
-        elif choice=="3":
+        elif choice == '3':
+            print("Exiting the program.")
             break
         else:
-            print("Invalid choice please enter a valid one")
-
-
-
-    
-        
-        
+            print("Invalid choice. Please enter a number between 1 and 3.")
+main()
