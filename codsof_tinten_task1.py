@@ -7,7 +7,7 @@ def list_tasks():
     if not tasks:
         print("There is no task in the list")
         return
-    for index,task in the enumerate(tasks):
+    for index,task in enumerate(tasks):
         print("{index+1}.{task}")
     def main():
         print("To do list application")
